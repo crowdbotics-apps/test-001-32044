@@ -28,8 +28,19 @@ class Book(models.Model):
     )
     movie = models.ForeignKey(
         "home.Movie",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="book_movie",
+    )
+
+
+class Airplane(models.Model):
+    "Generated Model"
+    name = models.CharField(
+        max_length=256,
+    )
+    passenger_count = models.IntegerField(
+        null=True,
+        blank=True,
     )

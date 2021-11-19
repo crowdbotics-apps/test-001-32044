@@ -35,16 +35,16 @@ class User(AbstractUser):
     )
     book = models.ForeignKey(
         "home.Book",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="user_book",
     )
     car = models.ForeignKey(
         "home.Car",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="user_car",
     )
 

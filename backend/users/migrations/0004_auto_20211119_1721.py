@@ -7,19 +7,31 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0004_book_movie'),
-        ('users', '0003_user_sex'),
+        ("home", "0004_book_movie"),
+        ("users", "0003_user_sex"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='book',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_book', to='home.Book'),
+            model_name="user",
+            name="book",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_book",
+                to="home.Book",
+            ),
         ),
         migrations.AddField(
-            model_name='user',
-            name='car',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_car', to='home.Car'),
+            model_name="user",
+            name="car",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_car",
+                to="home.Car",
+            ),
         ),
     ]

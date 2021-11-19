@@ -1,6 +1,11 @@
 from rest_framework import viewsets
-from home.models import Book, Car, Movie
-from .serializers import BookSerializer, CarSerializer, MovieSerializer
+from home.models import Airplane, Book, Car, Movie
+from .serializers import (
+    AirplaneSerializer,
+    BookSerializer,
+    CarSerializer,
+    MovieSerializer,
+)
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -59,3 +64,12 @@ class BookViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Book.objects.all()
+
+
+class AirplaneViewSet(viewsets.ModelViewSet):
+    serializer_class = AirplaneSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Airplane.objects.all()
