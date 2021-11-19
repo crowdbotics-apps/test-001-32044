@@ -26,3 +26,10 @@ class Book(models.Model):
     title = models.CharField(
         max_length=256,
     )
+    movie = models.ForeignKey(
+        "home.Movie",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="book_movie",
+    )

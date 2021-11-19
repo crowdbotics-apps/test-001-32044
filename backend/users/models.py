@@ -33,6 +33,20 @@ class User(AbstractUser):
         blank=True,
         max_length=2,
     )
+    book = models.ForeignKey(
+        "home.Book",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="user_book",
+    )
+    car = models.ForeignKey(
+        "home.Car",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="user_car",
+    )
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
