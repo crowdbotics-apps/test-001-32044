@@ -7,3 +7,22 @@ class Car(models.Model):
     brand = models.CharField(
         max_length=256,
     )
+    color = models.CharField(
+        max_length=256,
+        null=True,
+        blank=True,
+    )
+
+
+class Movie(models.Model):
+    "Generated Model"
+    title = models.CharField(
+        max_length=100,
+    )
+
+
+class Book(models.Model):
+    "Generated Model"
+    title = models.CharField(
+        max_length=256,
+    )
