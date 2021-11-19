@@ -8,9 +8,9 @@ class Car(models.Model):
         max_length=256,
     )
     color = models.CharField(
-        max_length=256,
         null=True,
         blank=True,
+        max_length=256,
     )
 
 
